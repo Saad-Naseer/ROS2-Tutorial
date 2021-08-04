@@ -14,5 +14,5 @@ $ colcon build
 
 3. Publishing and subscribing
 
-$ ros2 run <package-name> <exceutable-file-name>
+$ ros2 run package-name exceutable-file-name
 
