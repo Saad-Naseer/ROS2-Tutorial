@@ -6,7 +6,7 @@ Steps to run this tutorial
 
 1. First clone the repository
 
-$ git clone 
+$ git clone https://github.com/Saad-Naseer/ROS2-Tutorial.git
 
 2. Build the ros2 package
 
