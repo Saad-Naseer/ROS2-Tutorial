@@ -1,0 +1,32 @@
+#cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
+project(string_pub_sub)
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+#find_package(catkin REQUIRED COMPONENTS roscpp std_msgs)
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+#catkin_package()
+#include_directories(${catkin_INCLUDE_DIRS})
+include_directories(include)
+add_executable(string_pub string_pub.cpp)
+add_executable(string_sub string_sub.cpp)
+#target_link_libraries(talker ${catkin_LIBRARIES})
+ament_target_dependencies(string_pub
+  rclcpp
+  std_msgs)
+ament_target_dependencies(string_sub rclcpp std_msgs)
+#install(TARGETS talker
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS string_pub string_sub
+  DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY include/
+  DESTINATION include)
+ament_export_include_directories(include)
+ament_export_dependencies(std_msgs)
+ament_package()
