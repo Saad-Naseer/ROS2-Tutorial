@@ -1,6 +1,6 @@
 # ROS2-Tutorial
 
-A simple publisher and subscriber of string msg in Ros 2 as in similar language to Ros 1.
+A simple publisher and subscriber example of different msgs in Ros 2 as in similar language to Ros 1.
 
 Steps to run this tutorial
 
